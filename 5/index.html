@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background #5 — Interactive Node Mesh | serg</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        body { margin: 0; overflow: hidden; background: #060913; }
+        canvas { display: block; position: fixed; top: 0; left: 0; width: 100%; height: 100%; }
+        .demo-nav {
+            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+            z-index: 100; display: flex; gap: 6px; background: rgba(0,0,0,0.8);
+            padding: 10px 16px; border-radius: 30px; border: 1px solid rgba(0,242,254,0.4);
+            backdrop-filter: blur(10px); flex-wrap: wrap; justify-content: center;
+        }
+        .demo-nav a {
+            color: #94a3b8; text-decoration: none; padding: 4px 10px; border-radius: 12px;
+            font-family: 'Fira Code', monospace; font-size: 0.85rem; font-weight: 600;
+        }
+        .demo-nav a:hover, .demo-nav a.active { color: #00f2fe; background: rgba(0,242,254,0.15); }
+    </style>
+</head>
+<body>
+    <div class="demo-nav">
+        <a href="/">← Главная</a>
+        <a href="/1">1 Matrix</a>
+        <a href="/2">2 Warp</a>
+        <a href="/3">3 Fluid</a>
+        <a href="/4">4 Synthwave</a>
+        <a href="/5" class="active">5 Nodes</a>
+        <a href="/6">6 Plasma</a>
+        <a href="/7">7 Vortex</a>
+        <a href="/8">8 HUD</a>
+        <a href="/9">9 Aurora</a>
+        <a href="/10">10 Mandala</a>
+    </div>
+
+    <canvas id="meshCanvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('meshCanvas');
+        const ctx = canvas.getContext('2d');
+        let w = canvas.width = window.innerWidth;
+        let h = canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            w = canvas.width = window.innerWidth;
+            h = canvas.height = window.innerHeight;
+        });
+
+        const nodes = [];
+        const mouse = { x: w / 2, y: h / 2 };
+
+        window.addEventListener('mousemove', e => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        for (let i = 0; i < 90; i++) {
+            nodes.push({
+                x: Math.random() * w,
+                y: Math.random() * h,
+                vx: (Math.random() - 0.5) * 1.5,
+                vy: (Math.random() - 0.5) * 1.5,
+                radius: Math.random() * 2 + 1
+            });
+        }
+
+        function render() {
+            ctx.fillStyle = '#060913';
+            ctx.fillRect(0, 0, w, h);
+
+            for (let i = 0; i < nodes.length; i++) {
+                const n = nodes[i];
+                n.x += n.vx;
+                n.y += n.vy;
+
+                if (n.x < 0 || n.x > w) n.vx *= -1;
+                if (n.y < 0 || n.y > h) n.vy *= -1;
+
+                // Mouse Magnet
+                const dx = mouse.x - n.x;
+                const dy = mouse.y - n.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 140) {
+                    n.x += (dx / dist) * 1.2;
+                    n.y += (dy / dist) * 1.2;
+                }
+
+                ctx.beginPath();
+                ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
+                ctx.fillStyle = '#00f2fe';
+                ctx.fill();
+
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const n2 = nodes[j];
+                    const d = Math.hypot(n.x - n2.x, n.y - n2.y);
+                    if (d < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(n.x, n.y);
+                        ctx.lineTo(n2.x, n2.y);
+                        ctx.strokeStyle = `rgba(0, 242, 254, ${1 - d / 120})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame(render);
+        }
+
+        render();
+    </script>
+</body>
+</html>

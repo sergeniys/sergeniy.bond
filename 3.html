@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background #3 — Fluid Metaballs | serg</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        body { margin: 0; overflow: hidden; background: #080914; }
+        canvas { display: block; position: fixed; top: 0; left: 0; width: 100%; height: 100%; filter: blur(30px) contrast(20); }
+        .demo-nav {
+            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+            z-index: 100; display: flex; gap: 6px; background: rgba(0,0,0,0.8);
+            padding: 10px 16px; border-radius: 30px; border: 1px solid rgba(0,242,254,0.4);
+            backdrop-filter: blur(10px); flex-wrap: wrap; justify-content: center;
+        }
+        .demo-nav a {
+            color: #94a3b8; text-decoration: none; padding: 4px 10px; border-radius: 12px;
+            font-family: 'Fira Code', monospace; font-size: 0.85rem; font-weight: 600;
+        }
+        .demo-nav a:hover, .demo-nav a.active { color: #00f2fe; background: rgba(0,242,254,0.15); }
+    </style>
+</head>
+<body>
+    <div class="demo-nav">
+        <a href="/">← Главная</a>
+        <a href="/1">1 Matrix</a>
+        <a href="/2">2 Warp</a>
+        <a href="/3" class="active">3 Fluid</a>
+        <a href="/4">4 Synthwave</a>
+        <a href="/5">5 Nodes</a>
+        <a href="/6">6 Plasma</a>
+        <a href="/7">7 Vortex</a>
+        <a href="/8">8 HUD</a>
+        <a href="/9">9 Aurora</a>
+        <a href="/10">10 Mandala</a>
+    </div>
+
+    <canvas id="fluidCanvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('fluidCanvas');
+        const ctx = canvas.getContext('2d');
+        let w = canvas.width = window.innerWidth;
+        let h = canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            w = canvas.width = window.innerWidth;
+            h = canvas.height = window.innerHeight;
+        });
+
+        const balls = [];
+        const colors = ['#00f2fe', '#7f00ff', '#ff007f', '#4facfe', '#00e676'];
+
+        for (let i = 0; i < 15; i++) {
+            balls.push({
+                x: Math.random() * w,
+                y: Math.random() * h,
+                vx: (Math.random() - 0.5) * 4,
+                vy: (Math.random() - 0.5) * 4,
+                radius: Math.random() * 60 + 50,
+                color: colors[i % colors.length]
+            });
+        }
+
+        function animate() {
+            ctx.fillStyle = '#080914';
+            ctx.fillRect(0, 0, w, h);
+
+            balls.forEach(b => {
+                b.x += b.vx;
+                b.y += b.vy;
+
+                if (b.x < 0 || b.x > w) b.vx *= -1;
+                if (b.y < 0 || b.y > h) b.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(b.x, b.y, b.radius, 0, Math.PI * 2);
+                ctx.fillStyle = b.color;
+                ctx.fill();
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+</html>

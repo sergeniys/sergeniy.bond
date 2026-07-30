@@ -3,36 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Топ 10 Reels — Sergeniy Bond</title>
-    <meta name="description" content="Топ 10 Reels видео от Sergeniy Bond. Смотрите эксклюзивную подборку видео по центру экрана.">
+    <title>Top 10 Reels — serg</title>
+    <meta name="description" content="Топ 10 Reels от serg. Оптимизированная мобильная лента.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
-    <!-- Particle FX Canvas & Ambient Lighting -->
-    <canvas id="particleCanvas"></canvas>
+    <!-- Ambient Lighting -->
     <div class="ambient-glow glow-1"></div>
     <div class="ambient-glow glow-2"></div>
-    <div class="ambient-glow glow-3"></div>
     <div class="grid-pattern"></div>
 
     <!-- Navigation Header -->
-    <header class="navbar" id="navbar">
+    <header class="navbar">
         <div class="nav-container">
             <a href="/" class="nav-brand">
-                <span class="brand-code">&lt;</span>Sergeniy.Bond<span class="brand-code"> /&gt;</span>
+                <span class="brand-code">&lt;</span>serg<span class="brand-code"> /&gt;</span>
             </a>
             <nav class="nav-links">
                 <a href="/" class="nav-link">Главная</a>
-                <a href="/about" class="nav-link">О себе (Резюме)</a>
-                <a href="/reels" class="nav-link active">Top 10 Reels <span class="nav-badge">10 VIDEO</span></a>
+                <a href="/reels" class="nav-link active">Top 10 Reels</a>
+                <a href="/cat" class="nav-link">Кот 🐾</a>
+                <a href="#contact" class="nav-link nav-btn">Контакты</a>
             </nav>
         </div>
     </header>
@@ -40,221 +39,159 @@
     <main class="section" style="padding-top: 130px; padding-bottom: 80px;">
         <div class="container">
             <div class="section-header" style="text-align: center; margin-bottom: 40px;">
-                <span class="section-tag">/ EXCLUSIVE CONTENT</span>
-                <h1 class="section-title">Топ 10 Reels</h1>
-                <p style="color: var(--text-muted); margin-top: 8px;">Листайте вниз — видео воспроизводятся по очереди при прокрутке</p>
+                <h1 class="section-title">Top 10 Reels</h1>
+                <p style="color: var(--text-muted); margin-top: 8px;">Мобильно-оптимизированная лента • Ленивая загрузка</p>
             </div>
 
-            <!-- Reels Feed Container (Vertical Center Stream) -->
+            <!-- Reels Feed (Lazy Loaded for 60fps Mobile Performance) -->
             <div class="reels-feed-container">
 
-                <!-- Reel 1 -->
-                <div class="reel-card shadow-glow">
-                    <video class="reel-video" loop muted playsinline preload="metadata">
-                        <source src="../videos/1.mp4" type="video/mp4">
-                        Ваш браузер не поддерживает видео.
-                    </video>
+                <!-- 1 -->
+                <div class="reel-card">
+                    <video class="reel-video" data-src="../videos/1.mp4" loop muted playsinline preload="none"></video>
                     <div class="reel-overlay">
                         <div class="reel-info">
                             <span class="reel-tag">Reels #1</span>
-                            <div class="reel-title">Sergeniy Bond — Video 01</div>
+                            <div class="reel-title">serg — Video 01</div>
                         </div>
                         <div class="reel-actions">
-                            <button class="reel-action-btn btn-like" aria-label="Like">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                            </button>
-                            <button class="reel-action-btn btn-mute" aria-label="Mute/Unmute">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-                            </button>
+                            <button class="reel-action-btn btn-like" aria-label="Like"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+                            <button class="reel-action-btn btn-mute" aria-label="Mute"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg></button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Reel 2 -->
-                <div class="reel-card shadow-glow">
-                    <video class="reel-video" loop muted playsinline preload="metadata">
-                        <source src="../videos/2.mp4" type="video/mp4">
-                    </video>
+                <!-- 2 -->
+                <div class="reel-card">
+                    <video class="reel-video" data-src="../videos/2.mp4" loop muted playsinline preload="none"></video>
                     <div class="reel-overlay">
                         <div class="reel-info">
                             <span class="reel-tag">Reels #2</span>
-                            <div class="reel-title">Sergeniy Bond — Video 02</div>
+                            <div class="reel-title">serg — Video 02</div>
                         </div>
                         <div class="reel-actions">
-                            <button class="reel-action-btn btn-like" aria-label="Like">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                            </button>
-                            <button class="reel-action-btn btn-mute" aria-label="Mute/Unmute">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-                            </button>
+                            <button class="reel-action-btn btn-like" aria-label="Like"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+                            <button class="reel-action-btn btn-mute" aria-label="Mute"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg></button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Reel 3 -->
-                <div class="reel-card shadow-glow">
-                    <video class="reel-video" loop muted playsinline preload="metadata">
-                        <source src="../videos/3.mp4" type="video/mp4">
-                    </video>
+                <!-- 3 -->
+                <div class="reel-card">
+                    <video class="reel-video" data-src="../videos/3.mp4" loop muted playsinline preload="none"></video>
                     <div class="reel-overlay">
                         <div class="reel-info">
                             <span class="reel-tag">Reels #3</span>
-                            <div class="reel-title">Sergeniy Bond — Video 03</div>
+                            <div class="reel-title">serg — Video 03</div>
                         </div>
                         <div class="reel-actions">
-                            <button class="reel-action-btn btn-like" aria-label="Like">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                            </button>
-                            <button class="reel-action-btn btn-mute" aria-label="Mute/Unmute">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-                            </button>
+                            <button class="reel-action-btn btn-like" aria-label="Like"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+                            <button class="reel-action-btn btn-mute" aria-label="Mute"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg></button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Reel 4 -->
-                <div class="reel-card shadow-glow">
-                    <video class="reel-video" loop muted playsinline preload="metadata">
-                        <source src="../videos/4.mp4" type="video/mp4">
-                    </video>
+                <!-- 4 -->
+                <div class="reel-card">
+                    <video class="reel-video" data-src="../videos/4.mp4" loop muted playsinline preload="none"></video>
                     <div class="reel-overlay">
                         <div class="reel-info">
                             <span class="reel-tag">Reels #4</span>
-                            <div class="reel-title">Sergeniy Bond — Video 04</div>
+                            <div class="reel-title">serg — Video 04</div>
                         </div>
                         <div class="reel-actions">
-                            <button class="reel-action-btn btn-like" aria-label="Like">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                            </button>
-                            <button class="reel-action-btn btn-mute" aria-label="Mute/Unmute">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-                            </button>
+                            <button class="reel-action-btn btn-like" aria-label="Like"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+                            <button class="reel-action-btn btn-mute" aria-label="Mute"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg></button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Reel 5 -->
-                <div class="reel-card shadow-glow">
-                    <video class="reel-video" loop muted playsinline preload="metadata">
-                        <source src="../videos/5.mp4" type="video/mp4">
-                    </video>
+                <!-- 5 -->
+                <div class="reel-card">
+                    <video class="reel-video" data-src="../videos/5.mp4" loop muted playsinline preload="none"></video>
                     <div class="reel-overlay">
                         <div class="reel-info">
                             <span class="reel-tag">Reels #5</span>
-                            <div class="reel-title">Sergeniy Bond — Video 05</div>
+                            <div class="reel-title">serg — Video 05</div>
                         </div>
                         <div class="reel-actions">
-                            <button class="reel-action-btn btn-like" aria-label="Like">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                            </button>
-                            <button class="reel-action-btn btn-mute" aria-label="Mute/Unmute">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-                            </button>
+                            <button class="reel-action-btn btn-like" aria-label="Like"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+                            <button class="reel-action-btn btn-mute" aria-label="Mute"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg></button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Reel 6 -->
-                <div class="reel-card shadow-glow">
-                    <video class="reel-video" loop muted playsinline preload="metadata">
-                        <source src="../videos/6.mp4" type="video/mp4">
-                    </video>
+                <!-- 6 -->
+                <div class="reel-card">
+                    <video class="reel-video" data-src="../videos/6.mp4" loop muted playsinline preload="none"></video>
                     <div class="reel-overlay">
                         <div class="reel-info">
                             <span class="reel-tag">Reels #6</span>
-                            <div class="reel-title">Sergeniy Bond — Video 06</div>
+                            <div class="reel-title">serg — Video 06</div>
                         </div>
                         <div class="reel-actions">
-                            <button class="reel-action-btn btn-like" aria-label="Like">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                            </button>
-                            <button class="reel-action-btn btn-mute" aria-label="Mute/Unmute">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-                            </button>
+                            <button class="reel-action-btn btn-like" aria-label="Like"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+                            <button class="reel-action-btn btn-mute" aria-label="Mute"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg></button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Reel 7 -->
-                <div class="reel-card shadow-glow">
-                    <video class="reel-video" loop muted playsinline preload="metadata">
-                        <source src="../videos/7.mp4" type="video/mp4">
-                    </video>
+                <!-- 7 -->
+                <div class="reel-card">
+                    <video class="reel-video" data-src="../videos/7.mp4" loop muted playsinline preload="none"></video>
                     <div class="reel-overlay">
                         <div class="reel-info">
                             <span class="reel-tag">Reels #7</span>
-                            <div class="reel-title">Sergeniy Bond — Video 07</div>
+                            <div class="reel-title">serg — Video 07</div>
                         </div>
                         <div class="reel-actions">
-                            <button class="reel-action-btn btn-like" aria-label="Like">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                            </button>
-                            <button class="reel-action-btn btn-mute" aria-label="Mute/Unmute">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-                            </button>
+                            <button class="reel-action-btn btn-like" aria-label="Like"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+                            <button class="reel-action-btn btn-mute" aria-label="Mute"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg></button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Reel 8 -->
-                <div class="reel-card shadow-glow">
-                    <video class="reel-video" loop muted playsinline preload="metadata">
-                        <source src="../videos/8.mp4" type="video/mp4">
-                    </video>
+                <!-- 8 -->
+                <div class="reel-card">
+                    <video class="reel-video" data-src="../videos/8.mp4" loop muted playsinline preload="none"></video>
                     <div class="reel-overlay">
                         <div class="reel-info">
                             <span class="reel-tag">Reels #8</span>
-                            <div class="reel-title">Sergeniy Bond — Video 08</div>
+                            <div class="reel-title">serg — Video 08</div>
                         </div>
                         <div class="reel-actions">
-                            <button class="reel-action-btn btn-like" aria-label="Like">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                            </button>
-                            <button class="reel-action-btn btn-mute" aria-label="Mute/Unmute">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-                            </button>
+                            <button class="reel-action-btn btn-like" aria-label="Like"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+                            <button class="reel-action-btn btn-mute" aria-label="Mute"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg></button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Reel 9 -->
-                <div class="reel-card shadow-glow">
-                    <video class="reel-video" loop muted playsinline preload="metadata">
-                        <source src="../videos/9.mp4" type="video/mp4">
-                    </video>
+                <!-- 9 -->
+                <div class="reel-card">
+                    <video class="reel-video" data-src="../videos/9.mp4" loop muted playsinline preload="none"></video>
                     <div class="reel-overlay">
                         <div class="reel-info">
                             <span class="reel-tag">Reels #9</span>
-                            <div class="reel-title">Sergeniy Bond — Video 09</div>
+                            <div class="reel-title">serg — Video 09</div>
                         </div>
                         <div class="reel-actions">
-                            <button class="reel-action-btn btn-like" aria-label="Like">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                            </button>
-                            <button class="reel-action-btn btn-mute" aria-label="Mute/Unmute">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-                            </button>
+                            <button class="reel-action-btn btn-like" aria-label="Like"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+                            <button class="reel-action-btn btn-mute" aria-label="Mute"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg></button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Reel 10 -->
-                <div class="reel-card shadow-glow">
-                    <video class="reel-video" loop muted playsinline preload="metadata">
-                        <source src="../videos/10.mp4" type="video/mp4">
-                    </video>
+                <!-- 10 -->
+                <div class="reel-card">
+                    <video class="reel-video" data-src="../videos/10.mp4" loop muted playsinline preload="none"></video>
                     <div class="reel-overlay">
                         <div class="reel-info">
                             <span class="reel-tag">Reels #10</span>
-                            <div class="reel-title">Sergeniy Bond — Video 10</div>
+                            <div class="reel-title">serg — Video 10</div>
                         </div>
                         <div class="reel-actions">
-                            <button class="reel-action-btn btn-like" aria-label="Like">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                            </button>
-                            <button class="reel-action-btn btn-mute" aria-label="Mute/Unmute">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-                            </button>
+                            <button class="reel-action-btn btn-like" aria-label="Like"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+                            <button class="reel-action-btn btn-mute" aria-label="Mute"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg></button>
                         </div>
                     </div>
                 </div>
@@ -263,10 +200,39 @@
         </div>
     </main>
 
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="contact-box glass-card" style="text-align: center;">
+                <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 12px;">Контакты</h2>
+                <div class="contact-methods">
+                    <a href="https://t.me/Ssergeniy" target="_blank" rel="noopener" class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2L2 9.5l7.5 3L17 6l-5.5 8.5L17 21z"/></svg>
+                        </div>
+                        <div class="contact-info">
+                            <span class="contact-label">Telegram</span>
+                            <span class="contact-value">@Ssergeniy</span>
+                        </div>
+                    </a>
+                    <a href="https://github.com/sergeniys" target="_blank" rel="noopener" class="contact-card">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        </div>
+                        <div class="contact-info">
+                            <span class="contact-label">GitHub</span>
+                            <span class="contact-value">github.com/sergeniys</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-container">
-            <p>© <span id="currentYear">2026</span> Sergeniy Bond. Custom Domain <a href="https://sergeniy.bond" target="_blank" class="footer-link">sergeniy.bond</a>.</p>
+            <p>© <span id="currentYear">2026</span> serg. Domain <a href="https://sergeniy.bond" target="_blank" class="footer-link">sergeniy.bond</a>.</p>
         </div>
     </footer>
 

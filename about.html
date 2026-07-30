@@ -3,45 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>О себе / Резюме — Карцев Сергей Михайлович (Sergeniy Bond)</title>
-    <meta name="description" content="Резюме Карцев Сергей Михайлович — DevOps инженер, Backend программист. Опыт работы, навыки и образование.">
+    <title>О себе / Резюме — serg</title>
+    <meta name="description" content="Резюме serg — DevOps инженер, Backend программист.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
-    <!-- Particle FX Canvas & Ambient Lighting -->
-    <canvas id="particleCanvas"></canvas>
+    <!-- Ambient Lighting -->
     <div class="ambient-glow glow-1"></div>
     <div class="ambient-glow glow-2"></div>
-    <div class="ambient-glow glow-3"></div>
     <div class="grid-pattern"></div>
 
     <!-- Navigation Header -->
-    <header class="navbar" id="navbar">
+    <header class="navbar">
         <div class="nav-container">
             <a href="/" class="nav-brand">
-                <span class="brand-code">&lt;</span>Sergeniy.Bond<span class="brand-code"> /&gt;</span>
+                <span class="brand-code">&lt;</span>serg<span class="brand-code"> /&gt;</span>
             </a>
             <nav class="nav-links">
                 <a href="/" class="nav-link">Главная</a>
-                <a href="/about" class="nav-link active">О себе (Резюме)</a>
-                <a href="/reels" class="nav-link">Top 10 Reels <span class="nav-badge">NEW</span></a>
+                <a href="/reels" class="nav-link">Top 10 Reels</a>
+                <a href="/cat" class="nav-link">Кот 🐾</a>
                 <a href="/assets/resume.pdf" download class="nav-link nav-btn">Скачать PDF</a>
             </nav>
         </div>
     </header>
 
-    <main class="section" style="padding-top: 140px;">
+    <main class="section" style="padding-top: 130px;">
         <div class="container">
             
-            <!-- Resume Profile Header Card -->
             <div class="glass-card resume-header-card">
                 <div class="resume-user-info">
                     <span class="section-tag">/ РЕЗЮМЕ</span>
@@ -61,78 +58,59 @@
                 </div>
             </div>
 
-            <!-- Grid Layout for Experience & Info -->
             <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 32px; margin-top: 32px;">
                 
-                <!-- Left Column: Work Experience -->
+                <!-- Left Column -->
                 <div>
                     <h2 class="section-title" style="margin-bottom: 32px;">Опыт работы (9 месяцев)</h2>
                     
                     <div class="timeline">
-                        
-                        <!-- Exp 1 -->
                         <div class="timeline-item">
                             <div class="timeline-date">Июнь 2026 — Июль 2026 (2 месяца)</div>
                             <h3 class="timeline-title">Практикант DevOps / MLOps</h3>
-                            <div class="timeline-company">ГАЗИНФОРМСЕРВИС, ООО • Санкт-Петербург (www.gaz-is.ru)</div>
+                            <div class="timeline-company">ГАЗИНФОРМСЕРВИС, ООО • Санкт-Петербург</div>
                             <div class="timeline-desc">
                                 Выполнял задачи по настройке CI/CD конвейера и развертыванию инфраструктуры для проекта машинного обучения:
                                 <ul style="margin-top: 10px; margin-left: 20px; display: flex; flex-direction: column; gap: 8px;">
-                                    <li>Развернул и зарегистрировал проектный GitLab Runner (на базе Docker-in-Docker), настроил защищенные CI/CD-переменные для взаимодействия с внешними сервисами.</li>
-                                    <li>Настроил пайплайны в GitLab CI/CD для автоматической сборки Docker-образов окружения и публикации Python-пакетов во внутренний реестр компании.</li>
-                                    <li>Развернул Apache Airflow для оркестрации задач, настроил автоматическую синхронизацию DAG-файлов из репозитория и разработал pre-commit хук на Python для их автоматической генерации.</li>
-                                    <li>Реализовал DAG-и в Airflow для подготовки датасетов: автоматизировал разворачивание дампа БД PostgreSQL через Docker Operator, выгрузку parquet-файлов в S3-хранилище (MinIO) с безопасным получением секретов из HashiCorp Vault.</li>
-                                    <li>Настроил автоматическую сборку Docker-образов с артефактами ML-моделей из MLflow. Установил реестр образов Harbor и веб-интерфейс Airflow во внешний доступ через NGINX с TLS-терминацией.</li>
-                                    <li>Работал на выделенных Linux-хостах через SSH, проводил траблшутинг и решал сетевые проблемы.</li>
+                                    <li>GitLab Runner (Docker-in-Docker), GitLab CI/CD, сборка Python-пакетов.</li>
+                                    <li>Apache Airflow, автоматизация DAG-файлов, pre-commit хуки на Python.</li>
+                                    <li>PostgreSQL через Docker Operator, выгрузка Parquet в MinIO S3, HashiCorp Vault.</li>
+                                    <li>Harbor registry, Airflow web UI через NGINX с TLS-терминацией.</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <!-- Exp 2 -->
                         <div class="timeline-item">
                             <div class="timeline-date">Апрель 2026 — Май 2026 (2 месяца)</div>
                             <h3 class="timeline-title">Backend-разработчик (Java)</h3>
-                            <div class="timeline-company">СПбПУ Петра Великого (Учебный командный проект)</div>
+                            <div class="timeline-company">СПбПУ Петра Великого</div>
                             <div class="timeline-desc">
-                                В рамках командного учебного проекта участвовал в разработке Telegram-бота для криптоинвесторов на Java (Spring WebFlux).
-                                <ul style="margin-top: 10px; margin-left: 20px; display: flex; flex-direction: column; gap: 8px;">
-                                    <li>Интегрировал взаимодействие с Binance API для получения актуальных рыночных данных и подключил Telegram API.</li>
-                                    <li>Интегрировал LLM для генерации инвестиционных рекомендаций.</li>
-                                    <li>Реализовал бизнес-логику пользовательских команд: просмотр текущих цен, сравнение активов и управление криптовалютным портфелем.</li>
-                                </ul>
+                                Разработка Telegram-бота для криптоинвесторов на Java (Spring WebFlux): Binance API, Telegram API, интеграция LLM моделей.
                             </div>
                         </div>
 
-                        <!-- Exp 3 -->
                         <div class="timeline-item">
                             <div class="timeline-date">Февраль 2025 — Июнь 2025 (5 месяцев)</div>
                             <h3 class="timeline-title">Практикант Backend-разработчик (Python)</h3>
                             <div class="timeline-company">Оператор Газпром ИД • Москва</div>
                             <div class="timeline-desc">
-                                В составе команды разрабатывал Backend (Python) для Telegram-бота соискателей компании «Оператор Газпром ИД».
-                                <ul style="margin-top: 10px; margin-left: 20px; display: flex; flex-direction: column; gap: 8px;">
-                                    <li>Реализовал автоматический парсинг актуальных вакансий с платформы hh.ru и разработал архитектуру их логического представления.</li>
-                                    <li>Настроил систему фильтрации позиций на основе навыков и направлений деятельности, участвовал в интеграции приема откликов.</li>
-                                </ul>
+                                Backend на Python для Telegram-бота соискателей: автоматический парсинг вакансий с hh.ru API и система фильтрации.
                             </div>
                         </div>
-
                     </div>
                 </div>
 
-                <!-- Right Column: Education & Skills -->
+                <!-- Right Column -->
                 <div>
-                    <!-- Education -->
                     <div class="glass-card" style="margin-bottom: 24px;">
                         <span class="section-tag">/ ОБРАЗОВАНИЕ</span>
                         <h3 style="font-size: 1.2rem; margin-bottom: 8px;">СПбПУ Петра Великого (Политех)</h3>
                         <p style="color: var(--accent-cyan); font-weight: 600; font-size: 0.9rem;">2027 • Высшее</p>
                         <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 8px;">
-                            Институт компьютерных наук и технологий — Математика и компьютерные науки.
+                            Математика и компьютерные науки.
                         </p>
                     </div>
 
-                    <!-- Skills List -->
                     <div class="glass-card" style="margin-bottom: 24px;">
                         <span class="section-tag">/ НАВЫКИ</span>
                         <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;">
@@ -148,22 +126,9 @@
                             <span class="project-tags"><span>Apache Airflow</span></span>
                             <span class="project-tags"><span>HashiCorp Vault</span></span>
                             <span class="project-tags"><span>MinIO</span></span>
-                            <span class="project-tags"><span>MLflow</span></span>
                             <span class="project-tags"><span>PostgreSQL</span></span>
-                            <span class="project-tags"><span>C++</span></span>
                             <span class="project-tags"><span>Java</span></span>
                         </div>
-                    </div>
-
-                    <!-- Languages & Extra Info -->
-                    <div class="glass-card">
-                        <span class="section-tag">/ ДОПОЛНИТЕЛЬНО</span>
-                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px;">
-                            <strong>Языки:</strong> Русский (Родной), Английский (B1 — Средний).
-                        </p>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">
-                            <strong>О себе:</strong> Студент 4-го курса, ищу стажировку по направлению DevOps / Backend разработке. В летний период готов работать полный рабочий день, с осеннего семестра — частичная занятость (от 20 часов в неделю).
-                        </p>
                     </div>
                 </div>
 
@@ -175,7 +140,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-container">
-            <p>© <span id="currentYear">2026</span> Sergeniy Bond. Custom Domain <a href="https://sergeniy.bond" target="_blank" class="footer-link">sergeniy.bond</a>.</p>
+            <p>© <span id="currentYear">2026</span> serg. Domain <a href="https://sergeniy.bond" target="_blank" class="footer-link">sergeniy.bond</a>.</p>
         </div>
     </footer>
 
