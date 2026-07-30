@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sergeniy Bond — Senior DevOps & Web Engineer</title>
-    <meta name="description" content="Портфолио Sergeniy Bond — Senior DevOps & Web Developer. Облачная инфраструктура, CI/CD, Kubernetes, веб-разработка.">
-    <meta name="keywords" content="DevOps, Kubernetes, Docker, CI/CD, Web Development, Cloud Infrastructure, Sergeniy Bond">
+    <title>Sergeniy Bond — Senior DevOps & Backend Engineer</title>
+    <meta name="description" content="Официальный сайт Sergeniy Bond — DevOps, Cloud Infrastructure, Backend Developer.">
     <meta name="author" content="Sergeniy Bond">
 
-    <!-- Open Graph / Social Media -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sergeniy.bond/">
-    <meta property="og:title" content="Sergeniy Bond — Senior DevOps & Web Engineer">
-    <meta property="og:description" content="Инфраструктура как код, автоматизация CI/CD, масштабируемые веб-системы.">
+    <meta property="og:title" content="Sergeniy Bond — DevOps & Backend Engineer">
+    <meta property="og:description" content="Инфраструктура как код, Kubernetes, CI/CD, Python & Java Backend.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +23,8 @@
 </head>
 <body>
 
-    <!-- Ambient Background Lighting -->
+    <!-- Particle FX Canvas & Ambient Lighting -->
+    <canvas id="particleCanvas"></canvas>
     <div class="ambient-glow glow-1"></div>
     <div class="ambient-glow glow-2"></div>
     <div class="ambient-glow glow-3"></div>
@@ -33,32 +33,28 @@
     <!-- Navigation Header -->
     <header class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#hero" class="nav-brand">
+            <a href="/" class="nav-brand">
                 <span class="brand-code">&lt;</span>Sergeniy.Bond<span class="brand-code"> /&gt;</span>
             </a>
             <nav class="nav-links">
-                <a href="#about" class="nav-link">О себе</a>
+                <a href="/" class="nav-link active">Главная</a>
+                <a href="/about" class="nav-link">О себе (Резюме)</a>
+                <a href="/reels" class="nav-link">Top 10 Reels <span class="nav-badge">NEW</span></a>
                 <a href="#skills" class="nav-link">Скиллы</a>
-                <a href="#projects" class="nav-link">Проекты</a>
                 <a href="#terminal" class="nav-link">Терминал</a>
                 <a href="#contact" class="nav-link nav-btn">Связаться</a>
             </nav>
-            <button class="mobile-menu-toggle" id="menuToggle" aria-label="Открыть меню">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero Section with Bouncing Cat -->
         <section id="hero" class="hero-section">
             <div class="container hero-grid">
                 <div class="hero-content">
                     <div class="badge-status">
                         <span class="status-dot pulse"></span>
-                        <span class="status-text">Доступен для интересных проектов & консалтинга</span>
+                        <span class="status-text">DevOps & Backend Engineer • СПбПУ</span>
                     </div>
                     
                     <h1 class="hero-title">
@@ -66,272 +62,103 @@
                     </h1>
                     
                     <h2 class="hero-subtitle">
-                        Senior DevOps & Full-Stack Web Engineer
+                        DevOps Engineer & Backend Developer
                     </h2>
                     
                     <p class="hero-description">
-                        Проектирую отказоустойчивые облачные инфраструктуры, автоматизирую пайплайны поставки ПО (CI/CD) и создаю высокопроизводительные веб-приложения с упором на надежность и скорость.
+                        Проектирую отказоустойчивые Kubernetes кластеры, строю MLOps пайплайны (Airflow, MinIO, Vault) и разрабатываю высоконагруженные сервисы на Python, Go и Java.
                     </p>
 
                     <div class="hero-actions">
-                        <a href="#projects" class="btn btn-primary">
-                            <span>Смотреть проекты</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        <a href="/reels" class="btn btn-pink">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            <span>Смотреть Top 10 Reels</span>
                         </a>
-                        <a href="#contact" class="btn btn-glass">
-                            <span>Обсудить задачу</span>
+                        <a href="/about" class="btn btn-primary">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            <span>Мое Резюме</span>
                         </a>
-                    </div>
-
-                    <div class="hero-metrics">
-                        <div class="metric-item">
-                            <span class="metric-value" data-count="99.99">99.99%</span>
-                            <span class="metric-label">Target Uptime</span>
-                        </div>
-                        <div class="metric-divider"></div>
-                        <div class="metric-item">
-                            <span class="metric-value">Cloud-Native</span>
-                            <span class="metric-label">K8s & Terraform</span>
-                        </div>
-                        <div class="metric-divider"></div>
-                        <div class="metric-item">
-                            <span class="metric-value">DevOps</span>
-                            <span class="metric-label">Zero-Downtime CI/CD</span>
-                        </div>
+                        <a href="/assets/resume.pdf" download class="btn btn-glass">
+                            <span>PDF Резюме</span>
+                        </a>
                     </div>
                 </div>
 
+                <!-- Right Showcase: The Cat Card & Bouncing Text -->
                 <div class="hero-visual">
-                    <div class="terminal-card shadow-glow">
-                        <div class="terminal-header">
-                            <div class="terminal-buttons">
-                                <span class="btn-dot dot-red"></span>
-                                <span class="btn-dot dot-yellow"></span>
-                                <span class="btn-dot dot-green"></span>
-                            </div>
-                            <div class="terminal-title">sergeniy@infrastructure:~ (zsh)</div>
+                    <div class="cat-card-container">
+                        <div class="cat-frame">
+                            <img src="assets/cat.jpg" alt="Мой Кот" class="cat-img">
                         </div>
-                        <div class="terminal-body" id="heroTerminal">
-                            <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">whoami</span></div>
-                            <div class="terminal-output">Sergeniy Bond — DevOps Lead & Cloud Architect</div>
-                            <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">cat infrastructure_stack.yaml</span></div>
-                            <div class="terminal-output code-block">
-<span class="yaml-key">orchestration:</span> <span class="yaml-val">[Kubernetes, Helm, Docker]</span>
-<span class="yaml-key">iac:</span> <span class="yaml-val">[Terraform, Ansible, OpenTofu]</span>
-<span class="yaml-key">cicd:</span> <span class="yaml-val">[GitHub Actions, GitLab CI, ArgoCD]</span>
-<span class="yaml-key">cloud:</span> <span class="yaml-val">[AWS, Yandex Cloud, GCP, Bare-Metal]</span>
-<span class="yaml-key">monitoring:</span> <span class="yaml-val">[Prometheus, Grafana, Loki, OpenTelemetry]</span>
-<span class="yaml-key">web_stack:</span> <span class="yaml-val">[Node.js, TypeScript, Go, Python, NGINX]</span>
-                            </div>
-                            <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">kubectl get clusterstatus</span></div>
-                            <div class="terminal-output text-success">✓ ALL SYSTEMS OPERATIONAL (0 ERRORS)</div>
-                            <div class="terminal-line"><span class="prompt">$</span> <span class="cursor-blink">█</span></div>
+                        <div class="cat-bounce-text" title="это мой кот!!">
+                            <span>э</span><span>т</span><span>о</span><span>&nbsp;</span><span>м</span><span>о</span><span>й</span><span>&nbsp;</span><span>к</span><span>о</span><span>т</span><span>!</span><span>!</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">/ 01. О себе</span>
-                    <h2 class="section-title">Автоматизация, надежность и чистый код</h2>
-                </div>
-
-                <div class="about-grid">
-                    <div class="about-card glass-card">
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
-                        </div>
-                        <h3>Облачные системы & IaC</h3>
-                        <p>Инфраструктура как код (Terraform, Ansible). Построение надежных K8s кластеров с автоматическим масштабированием и гео-резервированием.</p>
-                    </div>
-
-                    <div class="about-card glass-card">
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                        </div>
-                        <h3>Непрерывная интеграция (CI/CD)</h3>
-                        <p>Настройка пайплайнов с нуля. GitOps подход с ArgoCD и Flux. Автоматическое тестирование, сканирование уязвимостей и бесшовный деплой.</p>
-                    </div>
-
-                    <div class="about-card glass-card">
-                        <div class="card-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                        </div>
-                        <h3>Highload Web & Безопасность</h3>
-                        <p>Оптимизация производительности NGINX/HAProxy, балансировка нагрузки, мониторинг (Prometheus/Grafana) и защита инфраструктуры (SecOps).</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
+        <!-- Tech Stack Quick Section -->
         <section id="skills" class="section">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">/ 02. Стек и Технологии</span>
-                    <h2 class="section-title">Инструменты, которыми я владею</h2>
+                    <span class="section-tag">/ 01. Технологический Стек</span>
+                    <h2 class="section-title">Инструменты и технологии</h2>
                 </div>
 
                 <div class="skills-tabs">
                     <button class="tab-btn active" data-tab="all">Все технологии</button>
-                    <button class="tab-btn" data-tab="devops">DevOps & Cloud</button>
-                    <button class="tab-btn" data-tab="web">Web & Backend</button>
-                    <button class="tab-btn" data-tab="monitoring">Monitoring & Sec</button>
+                    <button class="tab-btn" data-tab="devops">DevOps & MLOps</button>
+                    <button class="tab-btn" data-tab="backend">Backend & Languages</button>
                 </div>
 
-                <div class="skills-grid" id="skillsGrid">
+                <div class="skills-grid">
                     <div class="skill-card" data-category="devops">
                         <div class="skill-header">
-                            <span class="skill-name">Kubernetes & Helm</span>
+                            <span class="skill-name">Docker & Kubernetes</span>
                             <span class="skill-level">Expert</span>
                         </div>
-                        <p class="skill-desc">Создание и поддержка кластеров, написание чартов, сервис-меш (Istio/Linkerd).</p>
+                        <p class="skill-desc">GitLab Runner (dind), Docker-in-Docker, Helm, контейнеризация приложений.</p>
                     </div>
 
                     <div class="skill-card" data-category="devops">
                         <div class="skill-header">
-                            <span class="skill-name">Docker & Containerization</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <p class="skill-desc">Мульти-стейдж сборки, минимизация образов, безопасность контейнеров.</p>
-                    </div>
-
-                    <div class="skill-card" data-category="devops">
-                        <div class="skill-header">
-                            <span class="skill-name">Terraform & OpenTofu</span>
+                            <span class="skill-name">Apache Airflow & MLOps</span>
                             <span class="skill-level">Advanced</span>
                         </div>
-                        <p class="skill-desc">Модульная инфраструктура в AWS, Yandex Cloud и GCP.</p>
+                        <p class="skill-desc">Оркестрация DAG-ов, автогенерация хуками Python, MLflow, MinIO S3.</p>
                     </div>
 
                     <div class="skill-card" data-category="devops">
                         <div class="skill-header">
-                            <span class="skill-name">CI/CD (GitHub, GitLab, ArgoCD)</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <p class="skill-desc">GitOps автоматизация, canary/blue-green релизы.</p>
-                    </div>
-
-                    <div class="skill-card" data-category="web">
-                        <div class="skill-header">
-                            <span class="skill-name">Linux / Bash / Shell</span>
-                            <span class="skill-level">Master</span>
-                        </div>
-                        <p class="skill-desc">Администрирование Debian/Ubuntu/RHEL, тонкая настройка ядра и сети.</p>
-                    </div>
-
-                    <div class="skill-card" data-category="web">
-                        <div class="skill-header">
-                            <span class="skill-name">Python & Go</span>
+                            <span class="skill-name">HashiCorp Vault & Nginx</span>
                             <span class="skill-level">Advanced</span>
                         </div>
-                        <p class="skill-desc">Написание микросервисов, CLI утилит и скриптов автоматизации.</p>
+                        <p class="skill-desc">Управление секретами, SSL/TLS терминация, реверс-прокси, Harbor registry.</p>
                     </div>
 
-                    <div class="skill-card" data-category="web">
+                    <div class="skill-card" data-category="backend">
                         <div class="skill-header">
-                            <span class="skill-name">Node.js & Modern Web</span>
+                            <span class="skill-name">Python & Bash</span>
+                            <span class="skill-level">Expert</span>
+                        </div>
+                        <p class="skill-desc">Разработка микросервисов, парсеров (hh.ru API), CLI утилит и скриптов.</p>
+                    </div>
+
+                    <div class="skill-card" data-category="backend">
+                        <div class="skill-header">
+                            <span class="skill-name">Java & Spring WebFlux</span>
                             <span class="skill-level">Advanced</span>
                         </div>
-                        <p class="skill-desc">Разработка API, высоконагруженных бэкендов и адаптивных интерфейсов.</p>
+                        <p class="skill-desc">Реактивные сервисы, интеграция Telegram API, Binance API и LLM моделей.</p>
                     </div>
 
-                    <div class="skill-card" data-category="monitoring">
+                    <div class="skill-card" data-category="backend">
                         <div class="skill-header">
-                            <span class="skill-name">Prometheus, Grafana & Loki</span>
-                            <span class="skill-level">Expert</span>
+                            <span class="skill-name">PostgreSQL & MySQL</span>
+                            <span class="skill-level">Advanced</span>
                         </div>
-                        <p class="skill-desc">Сбор метрик, алертинг, централизованное логирование, SLO/SLA трекинг.</p>
-                    </div>
-
-                    <div class="skill-card" data-category="monitoring">
-                        <div class="skill-header">
-                            <span class="skill-name">NGINX, HAProxy, Envoy</span>
-                            <span class="skill-level">Expert</span>
-                        </div>
-                        <p class="skill-desc">Reverse proxy, SSL/TLS, балансировка нагрузки и WAF.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Projects Section -->
-        <section id="projects" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">/ 03. Проекты и Кейсы</span>
-                    <h2 class="section-title">Выполненные решения</h2>
-                </div>
-
-                <div class="projects-grid">
-                    <!-- Project 1 -->
-                    <div class="project-card glass-card">
-                        <div class="project-header">
-                            <span class="project-badge">Cloud Infrastructure</span>
-                            <div class="project-links">
-                                <a href="https://github.com" target="_blank" rel="noopener" class="icon-link" aria-label="GitHub Repository">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                        <h3 class="project-title">High-Availability K8s Cluster Architecture</h3>
-                        <p class="project-desc">
-                            Разработка IaC скриптов на Terraform для развертывания мульти-зонового Kubernetes кластера с автоматическим масштабированием (Autoscaling) и нулевым временем простоя при релизах.
-                        </p>
-                        <div class="project-tags">
-                            <span>Kubernetes</span>
-                            <span>Terraform</span>
-                            <span>ArgoCD</span>
-                            <span>AWS</span>
-                        </div>
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div class="project-card glass-card">
-                        <div class="project-header">
-                            <span class="project-badge">CI/CD Automation</span>
-                            <div class="project-links">
-                                <a href="https://github.com" target="_blank" rel="noopener" class="icon-link" aria-label="GitHub Repository">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                        <h3 class="project-title">Enterprise Microservices CI/CD Pipeline</h3>
-                        <p class="project-desc">
-                            Создание унифицированных пайплайнов в GitHub Actions для 30+ микросервисов. Сокращение времени деплоя с 45 минут до 4 минут благодаря кэшированию и параллельным сборкам.
-                        </p>
-                        <div class="project-tags">
-                            <span>GitHub Actions</span>
-                            <span>Docker</span>
-                            <span>Helm</span>
-                            <span>SonarQube</span>
-                        </div>
-                    </div>
-
-                    <!-- Project 3 -->
-                    <div class="project-card glass-card">
-                        <div class="project-header">
-                            <span class="project-badge">Observability & Monitoring</span>
-                            <div class="project-links">
-                                <a href="https://github.com" target="_blank" rel="noopener" class="icon-link" aria-label="GitHub Repository">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                        <h3 class="project-title">Centralized Logging & Alerting System</h3>
-                        <p class="project-desc">
-                            Внедрение стека Prometheus + Grafana + Loki с интеграцией Telegram/PagerDuty алертов. Визуализация метрик производительности и трассировки распределенных запросов.
-                        </p>
-                        <div class="project-tags">
-                            <span>Prometheus</span>
-                            <span>Grafana</span>
-                            <span>Loki</span>
-                            <span>OpenTelemetry</span>
-                        </div>
+                        <p class="skill-desc">Разворачивание дампов БД через Docker Operator, выгрузка Parquet файлов.</p>
                     </div>
                 </div>
             </div>
@@ -341,22 +168,22 @@
         <section id="terminal" class="section">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">/ 04. Интерактивный терминал</span>
-                    <h2 class="section-title">Попробуй CLI режим</h2>
+                    <span class="section-tag">/ 02. CLI Режим</span>
+                    <h2 class="section-title">Интерактивный терминал</h2>
                 </div>
 
-                <div class="interactive-terminal glass-card shadow-glow">
+                <div class="interactive-terminal glass-card">
                     <div class="terminal-header">
                         <div class="terminal-buttons">
                             <span class="btn-dot dot-red"></span>
                             <span class="btn-dot dot-yellow"></span>
                             <span class="btn-dot dot-green"></span>
                         </div>
-                        <div class="terminal-title">bond-shell v2.4 (Введите 'help' для списка команд)</div>
+                        <div class="terminal-title">bond-shell (Введите 'help' для списка команд)</div>
                     </div>
                     <div class="terminal-console" id="interactiveConsole">
-                        <div class="console-line text-muted">Добро пожаловать в интерактивную консоль Sergeniy Bond.</div>
-                        <div class="console-line text-muted">Введите <span class="text-accent">'help'</span> для получения доступных команд (skills, contacts, ping, clear).</div>
+                        <div class="console-line text-muted">Добро пожаловать в консоль Sergeniy Bond.</div>
+                        <div class="console-line text-muted">Введите <span class="text-accent">'help'</span> для получения доступных команд (reels, about, skills, cat, clear).</div>
                     </div>
                     <div class="terminal-input-row">
                         <span class="prompt">sergeniy.bond$&nbsp;</span>
@@ -369,43 +196,38 @@
         <!-- Contact Section -->
         <section id="contact" class="section">
             <div class="container">
-                <div class="contact-box glass-card shadow-glow">
-                    <div class="contact-header">
-                        <span class="section-tag">/ 05. Контакты</span>
-                        <h2 class="section-title">Готовы выстроить надежную инфраструктуру?</h2>
-                        <p class="contact-subtitle">
-                            Открыт для предложений по архитектуре облаков, оптимизации CI/CD процессов и комплексной веб-разработке.
-                        </p>
-                    </div>
+                <div class="contact-box glass-card" style="text-align: center;">
+                    <h2 class="section-title" style="margin-bottom: 16px;">Связаться со мной</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 32px;">Открыт для предложений по DevOps и Backend разработке.</p>
 
                     <div class="contact-methods">
-                        <a href="https://t.me/" target="_blank" rel="noopener" class="contact-card">
+                        <a href="https://t.me/Ssergeniy" target="_blank" rel="noopener" class="contact-card">
                             <div class="contact-icon">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2L2 9.5l7.5 3L17 6l-5.5 8.5L17 21z"/></svg>
                             </div>
                             <div class="contact-info">
                                 <span class="contact-label">Telegram</span>
-                                <span class="contact-value">@sergeniy_bond</span>
+                                <span class="contact-value">@Ssergeniy</span>
                             </div>
                         </a>
 
-                        <a href="mailto:contact@sergeniy.bond" class="contact-card" id="emailCard">
+                        <a href="mailto:zezezezety@gmail.com" class="contact-card">
                             <div class="contact-icon">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                             </div>
                             <div class="contact-info">
                                 <span class="contact-label">Email</span>
-                                <span class="contact-value">contact@sergeniy.bond</span>
+                                <span class="contact-value">zezezezety@gmail.com</span>
                             </div>
                         </a>
 
-                        <a href="https://github.com" target="_blank" rel="noopener" class="contact-card">
+                        <a href="tel:+79095750000" class="contact-card">
                             <div class="contact-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                             </div>
                             <div class="contact-info">
-                                <span class="contact-label">GitHub</span>
-                                <span class="contact-value">github.com/sergeniy-bond</span>
+                                <span class="contact-label">Телефон</span>
+                                <span class="contact-value">+7 (909) 575-00-00</span>
                             </div>
                         </a>
                     </div>
@@ -417,15 +239,15 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-container">
-            <p>© <span id="currentYear">2026</span> Sergeniy Bond. Hosted on GitHub Pages with Custom Domain <a href="https://sergeniy.bond" target="_blank" class="footer-link">sergeniy.bond</a>.</p>
+            <p>© <span id="currentYear">2026</span> Sergeniy Bond. Custom Domain <a href="https://sergeniy.bond" target="_blank" class="footer-link">sergeniy.bond</a>.</p>
             <div class="footer-status">
                 <span class="status-indicator"></span>
-                <span>Domain SSL Active</span>
+                <span>GitHub Pages SSL Active</span>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript logic -->
+    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
