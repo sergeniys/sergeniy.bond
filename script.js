@@ -9,7 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Optimized Reels Lazy Video Player
     initOptimizedReels();
 
-    // 3. Set Current Year
+    // 3. Side Edge Matrix Rain FX
+    initSideMatrixCanvas();
+
+    // 4. Set Current Year
     const yearEl = document.getElementById('currentYear');
     if (yearEl) {
         yearEl.textContent = new Date().getFullYear();
@@ -118,11 +121,95 @@ function initOptimizedReels() {
             });
         }
 
-        if (likeBtn) {
-            likeBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                likeBtn.classList.toggle('liked');
-            });
-        }
-    });
 }
+
+/* --- Side Edge Matrix Rain Canvas --- */
+function initSideMatrixCanvas() {
+    const canvas = document.getElementById('sideMatrixCanvas');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    let w = canvas.width = window.innerWidth;
+    let h = canvas.height = window.innerHeight;
+
+    const chars = '01ABCDEFGHIJKLMNOPQRSTUVWXYZｦｱｳｴｵｶｷｹｺｻｼｽｾｿﾀﾂﾃﾅﾆﾇﾈﾊﾋﾎﾏﾐﾑﾒﾓﾔﾕﾗﾘﾜ'.split('');
+    const fontSize = 15;
+    
+    let stripWidth, leftColumns, rightColumns;
+    let leftDrops = [], rightDrops = [];
+
+    function setupColumns() {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+
+        // Calculate strip width (approx 80-110px on each side)
+        stripWidth = Math.min(120, Math.max(40, Math.floor(w * 0.08)));
+        leftColumns = Math.max(1, Math.floor(stripWidth / fontSize));
+        rightColumns = Math.max(1, Math.floor(stripWidth / fontSize));
+
+        leftDrops = Array(leftColumns).fill(0).map(() => Math.floor(Math.random() * -30));
+        rightDrops = Array(rightColumns).fill(0).map(() => Math.floor(Math.random() * -30));
+    }
+
+    window.addEventListener('resize', setupColumns);
+    setupColumns();
+
+    function draw() {
+        ctx.fillStyle = 'rgba(8, 11, 18, 0.09)';
+        ctx.fillRect(0, 0, w, h);
+
+        ctx.font = `600 ${fontSize}px "Fira Code", monospace`;
+
+        // Left Side Strips
+        for (let i = 0; i < leftColumns; i++) {
+            const x = 12 + i * fontSize;
+            const y = leftDrops[i] * fontSize;
+            const char = chars[Math.floor(Math.random() * chars.length)];
+
+            // Shimmer / Glow head character
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = '#00f2fe';
+            ctx.fillStyle = '#ffffff';
+            ctx.fillText(char, x, y);
+
+            // Trail character
+            ctx.shadowBlur = 4;
+            ctx.shadowColor = '#00f2fe';
+            ctx.fillStyle = '#00f2fe';
+            ctx.fillText(char, x, y - fontSize);
+
+            if (y > h && Math.random() > 0.975) {
+                leftDrops[i] = 0;
+            }
+            leftDrops[i]++;
+        }
+
+        // Right Side Strips
+        const rightStart = w - (rightColumns * fontSize) - 12;
+        for (let i = 0; i < rightColumns; i++) {
+            const x = rightStart + i * fontSize;
+            const y = rightDrops[i] * fontSize;
+            const char = chars[Math.floor(Math.random() * chars.length)];
+
+            // Shimmer / Glow head character
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = '#00f2fe';
+            ctx.fillStyle = '#ffffff';
+            ctx.fillText(char, x, y);
+
+            // Trail character
+            ctx.shadowBlur = 4;
+            ctx.shadowColor = '#00f2fe';
+            ctx.fillStyle = '#00f2fe';
+            ctx.fillText(char, x, y - fontSize);
+
+            if (y > h && Math.random() > 0.975) {
+                rightDrops[i] = 0;
+            }
+            rightDrops[i]++;
+        }
+    }
+
+    setInterval(draw, 33);
+}
+
