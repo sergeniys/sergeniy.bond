@@ -533,8 +533,8 @@ button, input {
 .resume-avatar-frame {
     position: relative;
     flex-shrink: 0;
-    width: 140px;
-    height: 140px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     padding: 4px;
     background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
@@ -545,9 +545,13 @@ button, input {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center center;
     border-radius: 50%;
     display: block;
     border: 2px solid var(--bg-primary);
+    image-rendering: high-quality;
+    image-rendering: -webkit-optimize-contrast;
+    transform: translateZ(0);
 }
 
 .resume-user-info {

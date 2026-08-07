@@ -24,11 +24,8 @@
     <div class="ambient-glow glow-2"></div>
     <div class="grid-pattern"></div>
 
-    <!-- Quick Top Navigation Bar (Header navbar removed per requirement) -->
+    <!-- Quick Top Navigation Bar -->
     <div class="home-top-bar container">
-        <a href="/" class="bg-switcher-btn">← На главную</a>
-        <a href="/reels" class="bg-switcher-btn">🎬 Top 10 Reels</a>
-        <a href="/cat" class="bg-switcher-btn">🐾 Кот</a>
         <a href="/assets/resume.pdf" download class="bg-switcher-btn active-highlight">📥 Скачать PDF Резюме</a>
     </div>
 
@@ -62,10 +59,10 @@
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                             <span>GitHub: sergeniys</span>
                         </a>
-                        <a href="https://sergeniy.bond" target="_blank" class="contact-pill">
+                        <div class="contact-pill">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                             <span>sergeniy.bond</span>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -78,41 +75,19 @@
                     
                     <!-- Section: About Me -->
                     <div class="glass-card">
-                        <span class="section-tag">/ О СЕБЕ И КЛЮЧЕВЫХ КОМПЕТЕНЦИЯХ</span>
+                        
                         <h2 style="font-size: 1.4rem; margin-bottom: 12px; color: #fff;">Профессиональный профиль</h2>
                         
-                        <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.7; margin-bottom: 16px;">
-                            Увлеченный <strong>DevOps инженер и Backend программист</strong> с опытом разработки масштабируемых микросервисов и настройки инфраструктуры. Проектирую чистую архитектуру, внедряю надежные CI/CD пайплайны и обеспечиваю высокий уровень безопасности серверов.
+                        <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.7;">
+                            ищу работу\стажировку\практику по направлению DevOps / Backend разработке. Есть опыт в создании и деплое сайтов, разработки telegram ботов, Backend логики, настраивания ci/cd и разработки браузерных скриптов. В летний период готов работать полный рабочий день, а с началом осеннего семестра перейти на частичную занятость (20 часов в неделю) с возможностью совмещать работу и учебу.
                         </p>
-
-                        <div class="about-feature-grid">
-                            <div class="feature-box">
-                                <div class="feature-title">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-                                    <span>Деплой сайтов & Серверов</span>
-                                </div>
-                                <div class="feature-desc">
-                                    Имею богатый практический опыт <strong>создания сайтов и их выкладывания (деплоя) на Linux серверы (VPS/VDS)</strong>. Настройка Nginx (проксирование, SSL/TLS Let's Encrypt), Docker Compose, веб-сервисов, защищенных конфигураций, доменов и автоматических перезапусков через Systemd.
-                                </div>
-                            </div>
-
-                            <div class="feature-box">
-                                <div class="feature-title">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2L2 9.5l7.5 3L17 6l-5.5 8.5L17 21z"/></svg>
-                                    <span>Создание Telegram-ботов</span>
-                                </div>
-                                <div class="feature-desc">
-                                    Специализируюсь на <strong>разработке мощных Telegram-ботов</strong> на Python и Java (Spring WebFlux): интеграция REST API (hh.ru, Binance API), подключение современных нейросетей (LLM), проектирование баз данных и алгоритмов умной фильтрации.
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                     <!-- Section: Experience -->
                     <div>
                         <h2 class="section-title" style="margin-bottom: 24px; font-size: 1.5rem; color: #fff; display: flex; align-items: center; gap: 10px;">
                             <span>💼 Опыт работы</span>
-                            <span style="font-size: 0.85rem; color: var(--accent-cyan); font-weight: 600; font-family: var(--font-mono);">(9 месяцев коммерческого опыта)</span>
+                            <span style="font-size: 0.85rem; color: var(--accent-cyan); font-weight: 600; font-family: var(--font-mono);">(9 месяцев)</span>
                         </h2>
                         
                         <div class="timeline">
@@ -121,15 +96,10 @@
                             <div class="timeline-item">
                                 <div class="timeline-date">Июнь 2026 — Июль 2026 (2 месяца)</div>
                                 <h3 class="timeline-title">Практикант DevOps / MLOps</h3>
-                                <div class="timeline-company">ГАЗИНФОРМСЕРВИС, ООО • Санкт-Петербург</div>
-                                <div class="timeline-desc">
-                                    Выполнял комплексные задачи по автоматизации CI/CD конвейера и развертыванию инфраструктуры для проекта машинного обучения (MLOps):
-                                    <ul class="timeline-list">
-                                        <li><strong>CI/CD & Сборка:</strong> Настройка GitLab Runner в режиме Docker-in-Docker (DinD), оптимизация пайплайнов GitLab CI/CD, автоматизированная сборка и публикация Python-пакетов.</li>
-                                        <li><strong>Оркестрация процессов:</strong> Развертывание Apache Airflow, автоматизация и отладка DAG-файлов, внедрение pre-commit хуков на Python для автоматической проверки качества кода.</li>
-                                        <li><strong>Хранилища & Секреты:</strong> Интеграция PostgreSQL через Docker Operator, организация стабильной выгрузки данных формата Parquet в MinIO S3 хранилище, безопасная работа с HashiCorp Vault.</li>
-                                        <li><strong>Реестр & Сеть:</strong> Настройка Harbor registry и обеспечение защищенного доступа к Airflow web UI через NGINX с автоматической TLS-терминацией.</li>
-                                    </ul>
+                                <div class="timeline-company">ГАЗИНФОРМСЕРВИС, ООО • Санкт-Петербург, www.gaz-is.ru</div>
+                                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px; margin-bottom: 8px;">Информационные технологии, системная интеграция, интернет • Системная интеграция, автоматизация технологических и бизнес-процессов предприятия, ИТ-консалтинг</p>
+                                <div class="timeline-desc" style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.7;">
+                                    Выполнял задачи по настройке CI/CD конвейера и развертыванию инфраструктуры для проекта машинного обучения: Развернул и зарегистрировал проектный GitLab Runner (на базе Docker-in-Docker), настроил защищенные CI/CD-переменные для взаимодействия с внешними сервисами. Настроил пайплайны в GitLab CI/CD для автоматической сборки Docker-образов окружения и публикации Python-пакетов во внутренний реестр компании. Развернул Apache Airflow для оркестрации задач, настроил автоматическую синхронизацию DAG-файлов из репозитория и разработал pre-commit хук на Python для их автоматической генерации. Реализовал DAG-и в Airflow для подготовки датасетов: автоматизировал разворачивание дампа БД PostgreSQL через Docker Operator, а также выгрузку parquet-файлов в S3-хранилище (MinIO) с безопасным получением секретов из HashiCorp Vault. Настроил автоматическую сборку Docker-образов с артефактами ML-моделей, загружаемыми напрямую из MLflow. Установил локальный реестр образов Harbor, опубликовал его и веб-интерфейс Airflow во внешний доступ через реверс-прокси Nginx с настроенной TLS-терминацией. Работал на выделенных Linux-хостах через SSH, проводил траблшутинг и решал сетевые проблемы при интеграции корпоративных сервисов.
                                 </div>
                             </div>
 
@@ -137,14 +107,9 @@
                             <div class="timeline-item">
                                 <div class="timeline-date">Апрель 2026 — Май 2026 (2 месяца)</div>
                                 <h3 class="timeline-title">Backend-разработчик (Java)</h3>
-                                <div class="timeline-company">СПбПУ Петра Великого • Санкт-Петербург</div>
-                                <div class="timeline-desc">
-                                    Разработка высоконагруженного асинхронного Telegram-бота для криптоинвесторов на Java с использованием стека Spring WebFlux:
-                                    <ul class="timeline-list">
-                                        <li><strong>API Интеграции:</strong> Подключение Binance API для получения котировок, стаканов цен и аналитических данных в реальном времени.</li>
-                                        <li><strong>Нейросети & LLM:</strong> Интеграция с языковыми моделями (LLM) для автоматической генерации сводок рынка и персональных ответов пользователям.</li>
-                                        <li><strong>Telegram API:</strong> Реализация интерактивного UI меню бота, системы обработки команд и подписок.</li>
-                                    </ul>
+                                <div class="timeline-company">СПбПУ Петра Великого (Учебный проект)</div>
+                                <div class="timeline-desc" style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.7; margin-top: 8px;">
+                                    В рамках командного учебного проекта участвовал в разработке Telegram-бота для криптоинвесторов на Java (Spring WebFlux). Моей основной задачей была интеграция внешних сервисов: я настраивал взаимодействие с Binance API для получения актуальных рыночных данных, подключал Telegram API, а также интегрировал LLM для генерации инвестиционных рекомендаций. Кроме того, я реализовывал бизнес-логику ряда пользовательских команд, включая обработку запросов на просмотр текущих цен, сравнение активов и управление криптовалютным портфелем.
                                 </div>
                             </div>
 
@@ -153,26 +118,9 @@
                                 <div class="timeline-date">Февраль 2025 — Июнь 2025 (5 месяцев)</div>
                                 <h3 class="timeline-title">Практикант Backend-разработчик (Python)</h3>
                                 <div class="timeline-company">Оператор Газпром ИД • Москва</div>
-                                <div class="timeline-desc">
-                                    Разработка бэкенд-сервисов на Python для специализированного Telegram-бота подбора вакансий и соискателей:
-                                    <ul class="timeline-list">
-                                        <li><strong>Парсинг & Агрегация:</strong> Реализация модуля автоматического парсинга открытых вакансий с использованием REST API сервиса hh.ru.</li>
-                                        <li><strong>Фильтрация данных:</strong> Разработка алгоритмов многокритериальной фильтрации, сортировки и сопоставления требований кандидатов.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Additional Experience -->
-                            <div class="timeline-item" style="border-left-color: var(--accent-purple);">
-                                <div class="timeline-date">Практический опыт (Pet-проекты & Фриланс)</div>
-                                <h3 class="timeline-title">Разработка и Деплой Веб-приложений & Ботов</h3>
-                                <div class="timeline-company">Собственные проекты & Заказная разработка</div>
-                                <div class="timeline-desc">
-                                    Полный цикл проектирования, разработки, верстки и выкладывания сайтов на боевые VPS/VDS Linux серверы:
-                                    <ul class="timeline-list">
-                                        <li><strong>Веб-серверы & SSL:</strong> Конфигурирование Nginx, привязка доменов, выпуск и автоматическое обновление SSL-сертификатов Let's Encrypt.</li>
-                                        <li><strong>Контейнеризация:</strong> Упаковка сервисов в Docker контейнеры, оптимизация Dockerfile и изоляция среды.</li>
-                                    </ul>
+                                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px; margin-bottom: 8px;">Информационные технологии, системная интеграция, интернет • Разработка программного обеспечения</p>
+                                <div class="timeline-desc" style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.7;">
+                                    В составе команды разрабатывал Backend (Python) для Telegram-бота соискателей компании «Оператор Газпром ИД». Моей основной задачей была реализация автоматического парсинга актуальных вакансий с платформы hh.ru и разработка архитектуры их логического представления. Настроил систему фильтрации, благодаря которой пользователи могут удобно подбирать позиции на основе своих навыков и направлений деятельности, а также участвовал в интеграции функционала приема откликов с отправкой резюме
                                 </div>
                             </div>
 
@@ -203,51 +151,25 @@
                     <div class="glass-card">
                         <span class="section-tag">/ ТЕХНИЧЕСКИЙ СТЕК</span>
                         
-                        <div class="skill-category">
-                            <div class="skill-category-title">DevOps & MLOps</div>
-                            <div class="skill-tags-group project-tags">
-                                <span>Docker</span>
-                                <span>GitLab CI/CD</span>
-                                <span>Apache Airflow</span>
-                                <span>NGINX</span>
-                                <span>HashiCorp Vault</span>
-                                <span>MinIO S3</span>
-                                <span>Harbor</span>
-                                <span>Linux</span>
-                                <span>Bash</span>
-                            </div>
+                        <div class="skill-tags-group project-tags" style="margin-top: 12px;">
+                            <span>Python</span>
+                            <span>Linux</span>
+                            <span>Git</span>
+                            <span>Docker</span>
+                            <span>Bash</span>
+                            <span>Nginx</span>
+                            <span>MySQL</span>
+                            <span>DevOps</span>
+                            <span>Gitlab</span>
+                            <span>Apache Airflow</span>
+                            <span>HashiCorp Vault</span>
+                            <span>MinIO</span>
+                            <span>MLflow</span>
+                            <span>PostgreSQL</span>
+                            <span>C++</span>
+                            <span>Java</span>
+			<span>Django</span>
                         </div>
-
-                        <div class="skill-category">
-                            <div class="skill-category-title">Backend & Языки</div>
-                            <div class="skill-tags-group project-tags">
-                                <span>Python</span>
-                                <span>Java (Spring WebFlux)</span>
-                                <span>Git</span>
-                                <span>REST API</span>
-                                <span>Telegram API</span>
-                            </div>
-                        </div>
-
-                        <div class="skill-category">
-                            <div class="skill-category-title">Базы данных & Форматы</div>
-                            <div class="skill-tags-group project-tags">
-                                <span>PostgreSQL</span>
-                                <span>MySQL</span>
-                                <span>Parquet</span>
-                            </div>
-                        </div>
-
-                        <div class="skill-category" style="margin-bottom: 0;">
-                            <div class="skill-category-title">Деплой & Серверы</div>
-                            <div class="skill-tags-group project-tags">
-                                <span>VPS / VDS</span>
-                                <span>SSL / TLS</span>
-                                <span>Systemd</span>
-                                <span>Domain Setup</span>
-                            </div>
-                        </div>
-
                     </div>
 
                     <!-- Card: Downloads & Links -->
